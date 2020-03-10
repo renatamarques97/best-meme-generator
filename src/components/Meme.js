@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 
 class Meme extends Component {
-
+  constructor(props) {
+    super(props);
+  }
   componentDidMount() {
     const canvas = this.refs.canvas
     const ctx = canvas.getContext("2d")
@@ -9,15 +11,50 @@ class Meme extends Component {
     
     img.onload = () => {
       ctx.drawImage(img, 0, 0)
-      ctx.font = "40px Courier"
-      ctx.fillText("PLEASE", 210, 75)
+      ctx.font = "40px Roboto"
+      ctx.fillText("PLEASE", 100, 60)
+      this.draw();
     }
+  }
+  componentDidUpdate() {
+      this.draw();
+  }
+  draw = () => {
+    const top = this.props.textTop.toUpperCase();
+    const bottom = this.props.textBottom.toUpperCase();
+    const canvas = this.refs.canvas;
+    const ctx = canvas.getContext("2d");
+    const img = this.refs.image;
+
+    canvas.width = 500;
+    canvas.height = 600;
+    const padding = 10;
+    
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    
+    ctx.fillStyle = '#fff';
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = canvas.width*0.004;
+    
+    const _textSizeTop = 10/100*canvas.width;
+    const _textSizeBottom = 10/100*canvas.width;
+    
+    ctx.font = _textSizeTop + 'px ' + 'Impact';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+    ctx.fillText(bottom.replace(/((\s*\S+)*)\s*/, '$1'), canvas.width/2, canvas.height - 530 );
+
+    ctx.font = _textSizeBottom + 'px ' + 'Impact';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+
+    ctx.fillText(top.replace(/((\s*\S+)*)\s*/, '$1'), canvas.width/2, canvas.height - 70 );
   }
   render() {
     return(
       <div>
-        <canvas ref="canvas" width={640} height={425} />
-        <img ref="image" src="https://vignette.wikia.nocookie.net/meme/images/5/58/Willy_Wonka.jpg/revision/latest/top-crop/width/360/height/450?cb=20170214023325&path-prefix=pt-br" className="hidden" />
+        <canvas ref="canvas" />
+        <img ref="image" src={ this.props.url } className="hidden" />
       </div>
     )
   }
