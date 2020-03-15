@@ -4,6 +4,7 @@ class Meme extends Component {
   constructor(props) {
     super(props);
   }
+  
   componentDidMount() {
     const canvas = this.refs.canvas
     const ctx = canvas.getContext("2d")
@@ -16,9 +17,11 @@ class Meme extends Component {
       this.draw();
     }
   }
+
   componentDidUpdate() {
-      this.draw();
+    this.draw();
   }
+
   draw = () => {
     const top = this.props.textTop.toUpperCase();
     const bottom = this.props.textBottom.toUpperCase();

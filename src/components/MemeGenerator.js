@@ -16,14 +16,17 @@ class MemeGenerator extends Component {
   }
 
   changeTextTop = (text) => {
-    let { textTop } = Object.assign(this.state);
     const newState = { textTop: text };
     this.setState(newState);
   }
 
   changeTextBottom = (text) => {
-    let { textBottom } = Object.assign(this.state);
     const newState = { textBottom: text };
+    this.setState(newState);
+  }
+
+  changeImage = (link) => {
+    const newState = { url: link };
     this.setState(newState);
   }
 
@@ -38,6 +41,7 @@ class MemeGenerator extends Component {
         <MemeOptions 
           changeTextTop={ this.changeTextTop }
           changeTextBottom={ this.changeTextBottom }
+          changeImage={ this.changeImage }
         />
       </div>
     );
