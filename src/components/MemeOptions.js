@@ -4,7 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Slider from '@material-ui/core/Slider';
 
 class MemeOptions extends Component {
-  
+  changeImageExternal = (e) => {
+    const url = e.target.value;
+    this.props.changeImage(url);
+  }
+
+  changeImageFromLocalDisk = (e) => {
+    const url = URL.createObjectURL(e.target.files[0]);
+    this.props.changeImage(url);
+  }
 
   render () { 
     return (
