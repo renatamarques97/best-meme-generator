@@ -11,9 +11,6 @@ class Meme extends Component {
     const img = this.refs.image
     
     img.onload = () => {
-      ctx.drawImage(img, 0, 0)
-      ctx.font = "40px Roboto"
-      ctx.fillText("PLEASE", 100, 60)
       this.draw();
     }
   }
@@ -28,6 +25,9 @@ class Meme extends Component {
     const canvas = this.refs.canvas;
     const ctx = canvas.getContext("2d");
     const img = this.refs.image;
+    const textSizeTop = this.props.textSizeTop;
+    const textSizeBottom = this.props.textSizeBottom;
+    const totalPercentage = 100;
 
     canvas.width = 500;
     canvas.height = 600;
@@ -39,8 +39,8 @@ class Meme extends Component {
     ctx.strokeStyle = '#000';
     ctx.lineWidth = canvas.width*0.004;
     
-    const _textSizeTop = 10/100*canvas.width;
-    const _textSizeBottom = 10/100*canvas.width;
+    const _textSizeTop = textSizeTop/totalPercentage*canvas.width;
+    const _textSizeBottom = textSizeBottom/totalPercentage*canvas.width;
     
     ctx.font = _textSizeTop + 'px ' + 'Impact';
     ctx.textAlign = 'center';
