@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { TextField } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Slider from '@material-ui/core/Slider';
+import { FaDownload } from 'react-icons/fa';
+import { FaUpload } from 'react-icons/fa';
 
 class MemeOptions extends Component {
   changeImageExternal = (e) => {
@@ -17,8 +19,8 @@ class MemeOptions extends Component {
   render () { 
     return (
       <div>
-        <h3><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>Source Image</h3>
         <p>From URL</p>
+
         <input id="imgURL" class="block" type="text" placeholder="Link to image" 
           onChange={ (e) => this.changeImageExternal(e) }
         />
@@ -27,7 +29,7 @@ class MemeOptions extends Component {
         <input id="imgFile" type="file" accept="image/*"
           onChange={ (e) => this.changeImageFromLocalDisk(e) }
         />
-        <label for="imgFile" class="btn local-disk"><i class="fa fa-upload fa-fw"></i></label>
+        <label for="imgFile" class="btn local-disk"><FaUpload /></label>
         <label class=""><i class=""></i><p>Meme Text</p></label>
         <input id="textTop" class="block" type="text" placeholder="Top Text" 
           onChange={ (e) => this.props.changeTextTop(e.target.value) }
@@ -35,7 +37,7 @@ class MemeOptions extends Component {
         <input id="textBottom" class="block" type="text" placeholder="Bottom Text" 
           onChange={ (e) => this.props.changeTextBottom(e.target.value) }
         />
-        <label class=""><i class="fa fa-upload fa-fw"></i><p>Text Size</p></label>
+        <label class=""><p>Text Size</p></label>
         <label><a>Text Size Top</a></label>
         <Slider value={ this.props.textSizeTop } 
                 onChange={ this.props.changeSizeTextTop } 
@@ -50,7 +52,9 @@ class MemeOptions extends Component {
                 valueLabelDisplay="auto"
                 max={ 30 } min={ 2 }
                 />
-      </div>
+        <p>Export</p>
+        <label class="btn local-disk"><FaDownload /></label>
+      </div>      
     );
   }
 }

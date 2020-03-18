@@ -29,7 +29,7 @@ body {
   box-sizing: border-box;
   font-family: 'Roboto';
   font-weight: 400;
-  color: dimgrey;
+  color: whitesmoke;
 }
 
 /*HEADERS AND TEXT*/
@@ -105,12 +105,12 @@ button,
 .btn {
   padding: 15px;
   margin: 0 10px 10px 0;
-  display: inline-block;
   border: 0px solid dimgrey;
   background: slateblue;
   color: whitesmoke;
   outline: none;
   transition: all 0.25s, transform 0.1s;
+  display: table;
 }
 button:hover,
 .btn:hover {
@@ -546,10 +546,6 @@ input[type=range]:focus::-ms-fill-upper {
 
 #imgFile {
   display: none;
-}
-
-.local-disk {
-  display: table;
 }
 
 input[type=text], input[type=range] {
