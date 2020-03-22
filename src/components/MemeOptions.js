@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Slider from '@material-ui/core/Slider';
 import { FaDownload, FaUpload, FaFont } from 'react-icons/fa';
 import { AiOutlinePicture, AiOutlineFontSize } from 'react-icons/ai';
-import { GiCompactDisc } from 'react-icons/gi';
-import { TiExport } from 'react-icons/ti';
 
 class MemeOptions extends Component {
   changeImageExternal = (e) => {
@@ -26,7 +24,7 @@ class MemeOptions extends Component {
           onChange={ (e) => this.changeImageExternal(e) }
         />
         <a href="https://memeful.com/" target="_blank">memeful.com</a>
-        <p><GiCompactDisc /> From Local Disk</p>
+        <p>From Local Disk</p>
         <input id="imgFile" type="file" accept="image/*"
           onChange={ (e) => this.changeImageFromLocalDisk(e) }
         />
@@ -53,7 +51,7 @@ class MemeOptions extends Component {
                 valueLabelDisplay="auto"
                 max={ 30 } min={ 2 }
                 />
-        <p><TiExport />Export</p>
+        <p>Export</p>
         <label class="btn local-disk"><FaDownload /></label>
       </div>      
     );
