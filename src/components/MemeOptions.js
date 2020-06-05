@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { TextField } from '@material-ui/core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Slider from '@material-ui/core/Slider';
 import { FaDownload, FaUpload, FaFont } from 'react-icons/fa';
 import { AiOutlinePicture, AiOutlineFontSize } from 'react-icons/ai';
@@ -23,7 +21,7 @@ class MemeOptions extends Component {
         <input id="imgURL" class="block" type="text" placeholder="Link to image" 
           onChange={ (e) => this.changeImageExternal(e) }
         />
-        <a href="https://memeful.com/" target="_blank">memeful.com</a>
+        <a href="https://memeful.com/" target="_blank" rel="noopener noreferrer">memeful.com</a>
         <p>From Local Disk</p>
         <input id="imgFile" type="file" accept="image/*"
           onChange={ (e) => this.changeImageFromLocalDisk(e) }

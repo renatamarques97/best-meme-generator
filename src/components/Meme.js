@@ -1,15 +1,9 @@
 import React, { Component } from 'react'
 
 class Meme extends Component {
-  constructor(props) {
-    super(props);
-  }
-  
-  componentDidMount() {
-    const canvas = this.refs.canvas
-    const ctx = canvas.getContext("2d")
+    componentDidMount() {
     const img = this.refs.image
-    
+
     img.onload = () => {
       this.draw();
     }
@@ -31,17 +25,16 @@ class Meme extends Component {
 
     canvas.width = 500;
     canvas.height = 600;
-    const padding = 10;
-    
+
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    
+
     ctx.fillStyle = '#fff';
     ctx.strokeStyle = '#000';
     ctx.lineWidth = canvas.width*0.004;
-    
+
     const _textSizeTop = textSizeTop/totalPercentage*canvas.width;
     const _textSizeBottom = textSizeBottom/totalPercentage*canvas.width;
-    
+
     ctx.font = _textSizeTop + 'px ' + 'Impact';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'bottom';

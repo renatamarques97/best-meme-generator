@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import Meme from './Meme'
 import MemeOptions from './MemeOptions'
 
@@ -39,14 +39,14 @@ class MemeGenerator extends Component {
   render () {
     return (
       <div className="box">
-        <Meme 
+        <Meme
           url={ this.state.url }
           textTop={ this.state.textBottom }
           textBottom={ this.state.textTop }
           textSizeTop={ this.state.textSizeTop }
           textSizeBottom={ this.state.textSizeBottom }
         />
-        <MemeOptions 
+        <MemeOptions
           changeTextTop={ this.changeTextTop }
           changeTextBottom={ this.changeTextBottom }
           changeImage={ this.changeImage }
