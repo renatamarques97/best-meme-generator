@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 class Meme extends Component {
-    componentDidMount() {
+  componentDidMount() {
     const img = this.refs.image
 
     img.onload = () => {
