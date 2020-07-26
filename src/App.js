@@ -7,14 +7,16 @@ function App() {
   return (
     <div className="App">
       <Helmet>
+        <script data-ad-client="ca-pub-3629257967984571" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <meta name="description" content="Best Meme Generator" />
       </Helmet>
       <header className="App-header">
         <h1>Best Meme Generator</h1>
         <MemeGenerator />
       </header>
-      <p>This is the minimalist, fastest and easiest way to create your own custom memes,
-        choosing your image and adding text over and bellow an image.</p>
+      <p>Best Meme Generator is a open-source project created to be
+        a minimalist, fastest and easiest way to create your own custom memes,
+        choosing your image and adding text over and below an image.</p>
     </div>
   );
 }
